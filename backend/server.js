@@ -1,4 +1,4 @@
-// Improting https modile for createServer
+// Improting https module for createServer
 const https = require('https');
 
 // Jest mocks prefer objects and constructors, we need to use classes
