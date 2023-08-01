@@ -2,7 +2,7 @@
   "name": "backend",
   "main": "server.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --detectOpenHandles"
   },
   "dependencies": {
     "concurrently": "^8.2.0",
