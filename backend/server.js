@@ -1,14 +1,24 @@
 // Improting https module for createServer
 const https = require('https');
+
+// Imports the app module so we can use it within the server
 const app = require('./app/app');
+
+// imports dotenv module
+const dotenv = require('dotenv');
+
+// Configures dotenv module to allow us to use the port from .env in a variable
+dotenv.config()
+const port = process.env.port || 7000;
 
 // Jest mocks prefer objects and constructors, we need to use classes
 class Server {
     
-    // Constructor method for starting the server
+    // Method for starting the server
     startServer() {
+
         // Server creation method
-            this.run = https.createServer(app).listen(6000, console.log(`Server running on port 6000`));
+            this.run = https.createServer(app).listen(port, console.log(`Server running on port 6000`));
         }
     }
 // Runs the server
