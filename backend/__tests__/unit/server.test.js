@@ -19,7 +19,7 @@ describe('Server', () => {
         Test states what it does in a string
         Arranges the test 
     */
-    test('should create server on port 5000', () => {
+    test('should create server on port 6000', () => {
 
         // Act to create a new Server instantiation of the class and call the method
         const server = new Server().startServer();
