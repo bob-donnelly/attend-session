@@ -16,7 +16,7 @@ const port = process.env.port || 7000;
 // Function for starting the server
 Server = () => {
     // Private Server creation method 
-    this.run = https.createServer(app).listen(port, console.log(`Server running on port 6000`));
+    this.run = https.createServer(app).listen(port, console.log(`Server running on ${port}`));
 
     // Database connection function
     connectDB();
