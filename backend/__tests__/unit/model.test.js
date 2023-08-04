@@ -48,10 +48,10 @@ describe('userModel tests', () => {
         expect(savedUser.admin).toBe(userData.admin);
 
         /*
-        Logging that the userName from the user document in MongoDB to easily tell 
-        the test runner is not passing everything
+            Logging that the userName from the user document in MongoDB to easily tell 
+            the test runner is not passing everything
         */
-        console.log(savedUser.userName);
+        console.log(`Check if user is submitted: ${savedUser}`);
     });
 
     // Second aysnchrouns test in this group 
@@ -59,7 +59,7 @@ describe('userModel tests', () => {
 
         // Passing the userData with an extra field added to test if it will be ignored
         const userWithWrongField = Users(userData, {
-            _id: '64cc4fb93d9586d075099026', 
+            _id: '64cc4fb93d9586d075099028', 
             name: "invalid"
         });
 
