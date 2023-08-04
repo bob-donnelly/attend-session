@@ -58,8 +58,8 @@ describe('userModel tests', () => {
     test('should save user and ignore extra fields', async() => {
 
         // Passing the userData with an extra field added to test if it will be ignored
-        const userWithWrongField = Users(userData, {
-            _id: '64cc4fb93d9586d075099028', 
+        const userWithWrongField = Users({
+            ...userData,
             name: "invalid"
         });
 
