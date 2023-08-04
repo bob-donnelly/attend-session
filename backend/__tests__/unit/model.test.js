@@ -41,7 +41,7 @@ describe('userModel tests', () => {
         expect(savedUser._id).toBeDefined();
         expect(savedUser.userName).toBe(userData.userName);
         expect(savedUser.email).toBe(userData.email);
-        expect(savedUser.password).toBe(userData.password);
+        expect(savedUser.password).not.toBe(userData.password);
         expect(savedUser.groupName).toBe(userData.groupName);
         expect(savedUser.firstName).toBe(userData.firstName);
         expect(savedUser.lastName).toBe(userData.lastName);
@@ -59,7 +59,7 @@ describe('userModel tests', () => {
 
         // Passing the userData with an extra field added to test if it will be ignored
         const userWithWrongField = Users(userData, {
-            _id: '64cc4fb93d9586d075099007', 
+            _id: '64cc4fb93d9586d075099026', 
             name: "invalid"
         });
 
