@@ -29,25 +29,25 @@ describe('should test all GET requests', () => {
         const getAll = await getAllUsers();
         
         // Function to compare the controller against that does the same thing
-        const sanityCheck = await Users.find({ })
+        const sanityCheck = await Users.find({ });
 
         // Aserts that all users are found
         expect(getAll.length).toBe(sanityCheck.length);
 
         // Allows developer to easily check if tests are passing without getting data from MongoDB
-        console.log(getAll)
+        console.log(getAll);
     });
 
     // Arranges the test
     test('should get user by id', async () => {
 
         // Actions to be done
-        const getUser = await getUserById('64cc6f0b54ab61ecbf03f9ec')
+        const getUser = await getUserById('64cc6f0b54ab61ecbf03f9ec');
 
         // Asserts that the user is found by _id
         expect(getUser._id).toBeDefined();
         
         // Allows developer to easily check if tests are passing without getting data from MongoDB
-        console.log(getUser)
+        console.log(getUser);
     });
 });
