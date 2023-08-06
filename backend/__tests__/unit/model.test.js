@@ -17,7 +17,7 @@ const userData = {
 
 // Before each tests await database connection for a blank test
 beforeEach(async () => {
-    await connectDB()
+    await connectDB();
 });
 
 // After each rest disconnect the database for a blank test
