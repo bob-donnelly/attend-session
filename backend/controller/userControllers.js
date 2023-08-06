@@ -15,3 +15,23 @@ const getAllUsers = async (req, res) => {
         res.status(404).json({ message: 'Users not found' });
     }
 };
+
+// function to get one user from MongoDB by id
+const getUserById = async (req, res) => { 
+
+    // Awaiting user by id
+    const user = await Users.findById({ "id": _id });
+
+    // If user is found in MongoDB return user, if not returns a message
+    if(user) {
+        res.json(user);
+    } else {
+        res.status(404).json({ message: 'User not found' });
+    }
+};
+
+// Exporting functions to be used in routes and tests
+module.exports = {
+    getAllUsers,
+    getUserById
+}
