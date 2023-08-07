@@ -4,6 +4,9 @@ const express = require('express');
 // Creating the app
 const app = express();
 
+// Using json middleware from express
+app.use(express.json())
+
 // Using the app to serve the routes 
 app.get("/", (req, res) => {
     res.status(200).send("Hello World!");
