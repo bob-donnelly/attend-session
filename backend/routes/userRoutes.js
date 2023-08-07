@@ -10,7 +10,7 @@ const {
 // Routes for admins
 router
     .route('/admin')
-    .get(getAllUsers())
+    .get(getAllUsers)
 
 // Routes for users
 router
