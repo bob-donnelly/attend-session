@@ -19,7 +19,7 @@ const getAllUsers = async (req, res) => {
 const getUserById = async (req, res) => { 
 
     // Awaiting user by id
-    const user = await Users.findOne({ _id: req.params._id });
+    const user = await Users.findById(req.params.id);
 
     // If user is found in MongoDB return user, if not returns a message
     if(user) {

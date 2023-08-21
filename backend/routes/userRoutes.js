@@ -14,7 +14,7 @@ router
 
 // Routes for users
 router
-    .route('/account')
+    .route('/account/:id')
     .get(getUserById)
 
 // Exports all routers as router
