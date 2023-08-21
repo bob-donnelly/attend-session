@@ -1,5 +1,5 @@
 // Improting https module for createServer
-const https = require('https');
+const http = require('http');
 
 // Imports the app module so we can use it within the server
 const app = require('./app/app');
@@ -16,7 +16,7 @@ const port = process.env.port || 7000;
 // Function for starting the server
 Server = () => {
     // Private Server creation method 
-    this.run = https.createServer(app).listen(port, console.log(`Server running on ${port}`));
+    this.run = http.createServer(app).listen(port, console.log(`Server running on ${port}`));
 
     // Database connection function
     connectDB();
