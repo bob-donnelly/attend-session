@@ -1,21 +1,28 @@
 // Importing express router to be used
 const router = require('express').Router();
 
-// Controllers that we need to create routes
-const {
-    getAllUsers,
-    getUserById
-} = require('../controller/userControllers');
+// // Controllers that we need to create routes
+// const {
+//     getAllUsers,
+//     getUserById
+// } = require('../controller/userControllers');
 
-// Routes for admins
-router
-    .route('/admin')
-    .get(getAllUsers)
+router.get("/", (req, res) => {
+    res.status(200).send("Hello World!");
+});
 
-// Routes for users
-router
-    .route('/account')
-    .get(getUserById)
+router.get("/admin", (req, res) => {
+    res.status(200).send("Hello Admin!");
+});
+// // Routes for admins
+// router
+//     .route('/admin')
+//     .get(getAllUsers)
+
+// // Routes for users
+// router
+//     .route('/account')
+//     .get(getUserById)
 
 // Exports all routers as router
 module.exports = router;
