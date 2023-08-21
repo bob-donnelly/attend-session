@@ -11,7 +11,7 @@ describe("Testing routes", () => {
     test("the GET method should return", async () => {
 
         // Act to be tested
-        const response = await request(app).get("/");
+        const response = await request(app).get("/user/admin");
 
         // Assert and repsonse 
         expect(response.statusCode).toBe(200)
