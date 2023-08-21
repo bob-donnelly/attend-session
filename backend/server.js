@@ -1,4 +1,4 @@
-// Improting https module for createServer
+// Improting http module for createServer
 const http = require('http');
 
 // Imports the app module so we can use it within the server
