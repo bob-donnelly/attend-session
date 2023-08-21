@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json())
 
 // Using the app to serve the routes 
-app.use(userRoutes);
+app.use("/user", userRoutes);
 
 // Exporting the app module
 module.exports = app;
