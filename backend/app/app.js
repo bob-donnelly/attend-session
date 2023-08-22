@@ -1,5 +1,7 @@
 // Impoting express library to be used
 const express = require('express');
+
+// Importing cors to allow cross origin requests
 const cors = require('cors');
 
 // Importing routes from router module
