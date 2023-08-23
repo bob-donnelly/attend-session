@@ -23,7 +23,7 @@ beforeEach(async () => {
 // After each test disconnect the database for a blank test
 afterEach(async () => {
     await disconnectDB();
-})
+});
 
 // Grouping tests for userModel
 describe('userModel tests', () => { 

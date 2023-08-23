@@ -5,7 +5,7 @@ const express = require('express');
 const cors = require('cors');
 
 // Importing routes from router module
-const userRoutes = require('../routes/userRoutes')
+const userRoutes = require('../routes/userRoutes');
 
 // Creating the app
 const app = express();

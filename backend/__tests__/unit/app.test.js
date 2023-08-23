@@ -15,7 +15,7 @@ beforeEach(async () => {
 // After each test disconnect the database for a blank test
 afterEach(async () => {
     await disconnectDB();
-})
+});
 
 // Describing the grouped tests
 describe("Testing routes", () => {
@@ -52,5 +52,4 @@ describe("Testing routes", () => {
 
         console.log(response.statusCode);
     });
-
 });
