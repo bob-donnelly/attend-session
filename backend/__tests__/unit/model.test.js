@@ -20,7 +20,7 @@ beforeEach(async () => {
     await connectDB();
 });
 
-// After each rest disconnect the database for a blank test
+// After each test disconnect the database for a blank test
 afterEach(async () => {
     await disconnectDB();
 })
