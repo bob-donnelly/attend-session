@@ -2,7 +2,7 @@
   "name": "backend",
   "main": "server.js",
   "scripts": {
-    "test": "jest --detectOpenHandles --runInBand --verbose"
+    "test": "jest --detectOpenHandles --runInBand --verbose --coverage"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
