@@ -32,7 +32,6 @@ const useGetAllUsers = () => {
 
     // Return the users state
     return users;
-
 };
 
 // Export default is used if there is only one function in the file
