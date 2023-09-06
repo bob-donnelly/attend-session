@@ -1,5 +1,5 @@
 // Import the fetch logic custom hook from the user components
-import useGetOneUser  from '../components/userComponents';
+import useGetOneUser from '../components/userComponents';
 
 // UserProfile view component
 const UserProfile = () => {
