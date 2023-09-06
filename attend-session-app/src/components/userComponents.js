@@ -24,7 +24,7 @@ const useGetOneUser = () => {
                 const data = await response.json();
                 setUser(data);
             } else {
-                    response.json({message: "User not found"});
+                response.json({message: "User not found"});
             };
     };
 
