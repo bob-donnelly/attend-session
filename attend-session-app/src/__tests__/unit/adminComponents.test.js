@@ -2,7 +2,7 @@
 import '@testing-library/jest-dom';
 
 // Importing the renderHook wrapper for testing the custom hook
-import {renderHook, waitFor} from '@testing-library/react';
+import { renderHook, waitFor } from '@testing-library/react';
 
 // Importing components for testing
 import useGetAllUsers from '../../components/adminComponents';
@@ -11,7 +11,7 @@ import useGetAllUsers from '../../components/adminComponents';
 describe('Tests for all user components', () => {
     
     // Test for the admin table component
-    test('should fetch all users', async () => {
+    test('Should fetch all users', async () => {
 
             // Defining result as equal to the custom hook that fetches all users
             const { result } = renderHook(() => useGetAllUsers());

@@ -2,7 +2,7 @@
 import '@testing-library/jest-dom';
 
 // Importing the renderHook wrapper and waitFor functions for testing the custom hook
-import {renderHook, waitFor} from '@testing-library/react';
+import { renderHook, waitFor } from '@testing-library/react';
 
 // Importing components for testing
 import useGetOneUser from '../../components/userComponents';
@@ -11,7 +11,7 @@ import useGetOneUser from '../../components/userComponents';
 describe('Tests for all user components', () => {
     
     // Test for the user profile component
-    test('should fetch one user by id', async () => {
+    test('Should fetch one user by id', async () => {
 
         // User document to be compared
         const expected = {
@@ -24,7 +24,7 @@ describe('Tests for all user components', () => {
             "lastName": "Janjusevic", 
             "password": "$2b$10$M9oJUk31uD0ez57e9OsE0e8rYA2/RnlObBiFEHAuROqSLJfypjx6W", 
             "userName": "hjanjusevic0"
-        }
+        };
             
             // Defining user as equal to the custom hook that fetches the user data from an id
             const { result } = renderHook(() => useGetOneUser());

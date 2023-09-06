@@ -1,5 +1,5 @@
 // Importing React hooks to be used in a custom hook
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 
 // Custom hook declaration starts with use then the name of the hook
 const useGetAllUsers = () => {

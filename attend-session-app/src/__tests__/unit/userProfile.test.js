@@ -8,10 +8,10 @@ import { render, screen } from '@testing-library/react';
 import UserProfile from '../../view/userProfile';
 
 // User profile view test suite
-describe('UserProfile', () => {
+describe('User Profile tests', () => {
 
     // Test for the user profile information fields loading data
-    test('should load user profile information fields', () => {
+    test('Should load user profile information fields', () => {
             
             // Render the user profile view
             render(<UserProfile />);
@@ -26,7 +26,7 @@ describe('UserProfile', () => {
     });
 
     // Test for the user profile button field
-    test('should load user profile button field', () => {
+    test('Should load user profile button field', () => {
 
         render(<UserProfile />);
 
@@ -34,7 +34,7 @@ describe('UserProfile', () => {
     });
 
         // Test for the user profile button field
-        test('should load user profile input text fields', () => {
+        test('Should load user profile input text fields', () => {
 
             render(<UserProfile />);
 

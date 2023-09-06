@@ -8,7 +8,7 @@ import { render, screen } from '@testing-library/react';
 import UserTable from '../../view/adminPanel';
 
 // Test suite for admin panel view
-describe('admin panel view', () => {
+describe('Admin Panel view tests', () => {
 
     // Test for the User Table
     test('User table header test', () => {
