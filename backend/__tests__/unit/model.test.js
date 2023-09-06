@@ -6,13 +6,13 @@ const { connectDB, disconnectDB } = require('../../database/connection');
 
 // Declaring user data to create a new user
 const userData = {
-    userName:"hjanjusevic0",
-    email:"hjanjusevic0@hp.com",
-    password:"passwordCouple",
-    groupName:"White, Wuckert and Swift",
-    firstName:"Hilario",
-    lastName:"Janjusevic",
-    admin:false
+    userName: "hjanjusevic0",
+    email: "hjanjusevic0@hp.com",
+    password: "passwordCouple",
+    groupName: "White, Wuckert and Swift",
+    firstName: "Hilario",
+    lastName: "Janjusevic",
+    admin: false
 };
 
 // Before each tests await database connection for a blank test
@@ -26,10 +26,10 @@ afterEach(async () => {
 });
 
 // Grouping tests for userModel
-describe('userModel tests', () => { 
+describe('User Model tests', () => { 
 
     // Asynchronous test to await database functions
-    test('should create a user', async() => {
+    test('Should create a user', async() => {
         
         // User user is equal to the Users Schema with userData loaded
         const user = Users(userData);
@@ -55,7 +55,7 @@ describe('userModel tests', () => {
     });
 
     // Second aysnchrouns test in this group 
-    test('should save user and ignore extra fields', async() => {
+    test('Should save user and ignore extra fields', async() => {
 
         // Passing the userData with an extra field added to test if it will be ignored
         const userWithWrongField = Users({
