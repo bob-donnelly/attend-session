@@ -5,7 +5,7 @@ import '@testing-library/jest-dom';
 import { renderHook, waitFor } from '@testing-library/react';
 
 // Importing components for testing
-import useGetAllUsers from '../../components/adminComponents';
+import useGetAllUsers from '../../components/adminTableComponent';
 
 // Test suite for the admin components
 describe('Tests for all user components', () => {

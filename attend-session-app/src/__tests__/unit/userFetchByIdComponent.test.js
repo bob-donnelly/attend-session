@@ -5,7 +5,7 @@ import '@testing-library/jest-dom';
 import { renderHook, waitFor } from '@testing-library/react';
 
 // Importing components for testing
-import useGetOneUser from '../../components/userComponents';
+import useGetOneUser from '../../components/userFetchByIdComponent';
 
 // Test suite for the user components
 describe('Tests for all user components', () => {
