@@ -1,5 +1,5 @@
 // Import the fetch logic custom hook from the admin components
-import useGetAllUsers from '../components/adminComponents';
+import useGetAllUsers from '../components/adminTableComponent';
 
 // AdminPanel view component
 const AdminPanel = () => {
