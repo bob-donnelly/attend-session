@@ -5,7 +5,8 @@ const router = require('express').Router();
 const {
     getAllUsers,
     getUserById,
-    registration
+    registration,
+    login
 } = require('../controller/userControllers');
 
 // Routes for admins
@@ -22,6 +23,11 @@ router
 router
     .route('/signup')
     .post(registration)
+
+// Route for logging in
+router.
+    route('/login')
+    .post(login)
 
 // Exports all routers as router
 module.exports = router;
