@@ -1,6 +1,8 @@
 // Importing user model to use in controllers
 const Users = require('../model/userModel');
 
+const bcrypt = require('bcrypt');
+
 // function to get all users
 const getAllUsers = async (req, res) => {
 
@@ -36,7 +38,7 @@ const registration = async (req, res) => {
         are in the request body to be sent to the database
     */
 
-    const { userName, email, password, groupName, firstName, lastName, admin } = req.body
+    const { userName, email, password, groupName, firstName, lastName, admin } = req.body;
 
     // Function checks that the user email does not already exist
 
@@ -83,9 +85,38 @@ const registration = async (req, res) => {
     };
 };
 
+const login = async (req, res) => {
+
+    // username and password are in the request body sent to the database
+    const { email, password } = req.body;
+
+    // User function is an asynchronoous function that checks the username is in the database
+    const user = await Users.findOne({ email });
+
+    /* 
+        If the username is in the database matches 
+        we check if the password is correct then recieve 
+        the entire user record as the response 
+    */
+    if (email === user.email && bcrypt.compareSync(password, user.password) === true) {
+        res.json({ 
+            userName: user.userName,
+            email: user.email,
+            password: user.password,
+            groupName: user.groupName,
+            firstName: user.firstName,
+            lastName: user.lastName,
+            admin: user.admin
+        });
+    } else {
+        res.status(500).json({ message: 'Incorrect account information.'});
+    };
+};
+
 // Exporting functions to be used in routes
 module.exports = {
     getAllUsers,
     getUserById,
-    registration
+    registration,
+    login
 }
