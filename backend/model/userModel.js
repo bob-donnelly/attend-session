@@ -75,17 +75,7 @@ userSchema.pre('save', function(next) {
                 next();
             });
         });
-    }
+    };
 });
-
-// Use mongoose userSchema methods to use bcrypt to compare the password string with the stored hash
-userSchema.methods.comparePassword = function(password, callback) {
-    bcrypt.comparePassword(password, this.password, function(err, isMatch) {
-        if(err) {
-            return callback(err);
-        }
-        callback(null, isMatch);
-    });
-}
 
 module.exports = mongoose.model('User', userSchema);
