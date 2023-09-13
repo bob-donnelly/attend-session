@@ -2,8 +2,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Importing views from the views folder
-import UserProfile from '../view/userProfile'
-import AdminPanel from '../view/adminPanel'
+import UserProfile from '../view/userProfile';
+import AdminPanel from '../view/adminPanel';
+import Signup from '../view/signup';
 
 // Application function that will house all of the page components
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Routes>
           <Route exact path="/profile" element={<UserProfile />}/>
           <Route exact path="/admin" element={<AdminPanel />}/>
+          <Route exact path="/signup" element={<Signup />}/>
           </Routes>
       </main>
     </Router>
