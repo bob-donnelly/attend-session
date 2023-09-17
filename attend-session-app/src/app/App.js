@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import UserProfile from '../view/userProfile';
 import AdminPanel from '../view/adminPanel';
 import Signup from '../view/signup';
+import Login from '../view/login';
 
 // Application function that will house all of the page components
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route exact path="/profile" element={<UserProfile />}/>
           <Route exact path="/admin" element={<AdminPanel />}/>
           <Route exact path="/signup" element={<Signup />}/>
+          <Route exact path="/login" element={<Login />}/>
           </Routes>
       </main>
     </Router>
