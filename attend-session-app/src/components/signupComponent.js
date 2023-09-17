@@ -36,7 +36,7 @@ const useRegistration = () => {
     // Creating a fetch asynchronous function that will register a new user
     const handleSubmit = async (event) => {
 
-        // Stops the user from submitting a blank form
+        // Stops the page from refreshing on button
         event.preventDefault();
 
         // If the password and confirm password do not match set the errors state
