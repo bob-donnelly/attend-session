@@ -1,6 +1,9 @@
 // Importing React hooks to be used in a custom hook
 import { useEffect, useState } from 'react';
 
+// Importing the useToken custom hook that gets the token from session storage
+import useToken from '../components/auth';
+
 // Custom hook declaration starts with use then the name of the hook
 const useGetOneUser = () => {
 
@@ -10,8 +13,11 @@ const useGetOneUser = () => {
     */
     const [user, setUser] = useState([]);
 
-    // Hardcoding the user id will refactor later to pass a logged in user id instead
-    const id = '64d02b63cf47708753b33f62';
+    // Using get token from the useToken custom hook.
+    const { getToken } = useToken();
+
+    // Setting the id to be the value of the users id token that is saved to storage when they log in
+    const id = getToken()._id;
 
     // Creating a fetch asynchronous function that will return all users and set the state
     const fetchOneUser = async () => {
