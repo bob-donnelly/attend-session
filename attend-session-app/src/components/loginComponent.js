@@ -41,7 +41,8 @@ const useLogin = () => {
             });
 
             if(response.ok) {
-                response.json({message: "User logged in successfully"});
+                const data = await response.json();
+                sessionStorage.setItem('token', JSON.stringify(data.token));
             } else {
                 response.json({message: "User not logged in"});
             }
