@@ -34,7 +34,7 @@ const AdminPanel = () => {
                         <td>{user.groupName}</td>
                     </tr>
                     ))
-                };
+                }
 
             </table>
         </div>
