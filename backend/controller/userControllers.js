@@ -99,14 +99,13 @@ const login = async (req, res) => {
         the entire user record as the response 
     */
     if (email === user.email && bcrypt.compareSync(password, user.password) === true) {
-        res.json({ 
-            userName: user.userName,
-            email: user.email,
-            password: user.password,
-            groupName: user.groupName,
-            firstName: user.firstName,
-            lastName: user.lastName,
-            admin: user.admin
+        res.send({ 
+            token: { 
+                _id: user._id,
+                groupName: user.groupName,
+                firstName: user.firstName,
+                admin: user.admin 
+            }
         });
     } else {
         res.status(500).json({ message: 'Incorrect account information.'});
