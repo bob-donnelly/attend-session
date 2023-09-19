@@ -6,6 +6,8 @@ import UserProfile from '../view/userProfile';
 import AdminPanel from '../view/adminPanel';
 import Signup from '../view/signup';
 import Login from '../view/login';
+import ProtectAdminRoutes from '../components/protectAdminRoutes';
+import ProtectUserRoutes from '../components/protectUserRoutes';
 
 // Application function that will house all of the page components
 function App() {
@@ -19,10 +21,14 @@ function App() {
           the exact path and the element which is the component for that route 
       */}
           <Routes>
-          <Route exact path="/profile" element={<UserProfile />}/>
-          <Route exact path="/admin" element={<AdminPanel />}/>
-          <Route exact path="/signup" element={<Signup />}/>
-          <Route exact path="/login" element={<Login />}/>
+            <Route element={<ProtectUserRoutes />}>
+              <Route exact path="/profile" element={<UserProfile />}/>
+            </Route>
+            <Route element={<ProtectAdminRoutes />}>
+              <Route exact path="/admin" element={<AdminPanel />}/>
+            </Route>
+            <Route exact path="/signup" element={<Signup />}/>
+            <Route exact path="/login" element={<Login />}/>
           </Routes>
       </main>
     </Router>
