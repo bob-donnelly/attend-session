@@ -10,12 +10,31 @@ const app = require('../../app/app');
 // User data to be send in registration test
 const user = {
     userName: "Jim",
-    email: "test@test6.com",
-    password: "differentpassword",
-    groupName: "Activity name here",
-    firstName: "Baker",
-    lastName: "Smith",
+    email: "test@test4322.com",
+    password: "differentpassword2",
+    groupName: "Activity name here2",
+    firstName: "Baker2",
+    lastName: "Smith2",
     admin: true
+};
+
+const updateAllUserFields = {
+    userName: "Jimmiest212",
+    email: "test@test40312.com",
+    password: "differentpasswords312",
+    groupName: "Activity name here312",
+    firstName: "BakersDozens312",
+    lastName: "Smithy312"
+};
+
+const missingUpdateFields = {
+    groupName: "Activity name here312",
+    firstName: "BakersDozen312",
+    lastName: "Smithiest312"
+};
+
+const invalidUpdateField = {
+    lastName: "Janjusevic"
 };
 
 // Login information to be sent in login test
@@ -84,5 +103,24 @@ describe("Testing routes", () => {
         const response = await request(app).post("/user/login").send({...login});
 
         expect(response.statusCode).toBe(200);
+    });
+
+    test('The user should be updated when all fields are changed', async () => {
+        const response = await request(app).patch("/user/update/64cc6e90db7249ae1676c600").send({...updateAllUserFields});
+
+        expect(response.statusCode).toBe(200);
+
+    });
+
+    test('Partial submission should result in details being updated', async () => {
+        const response = await request(app).patch("/user/update/64cc6f0a54ab61ecbf03f9ea").send({...missingUpdateFields }); response
+
+        expect(response.statusCode).toBe(200);
+    });
+    
+    test('Having any field be the same should result in 404', async () => {
+        const response = await request(app).patch("/user/update/64cc6f0b54ab61ecbf03f9ec").send({...invalidUpdateField }); response
+
+        expect(response.statusCode).toBe(404);
     });
 });
