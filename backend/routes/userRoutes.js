@@ -6,7 +6,8 @@ const {
     getAllUsers,
     getUserById,
     registration,
-    login
+    login, 
+    updateUserById
 } = require('../controller/userControllers');
 
 // Routes for admins
@@ -28,6 +29,11 @@ router
 router.
     route('/login')
     .post(login)
+
+// Route for updating a user
+router.
+    route('/update/:id')
+    .patch(updateUserById)
 
 // Exports all routers as router
 module.exports = router;
