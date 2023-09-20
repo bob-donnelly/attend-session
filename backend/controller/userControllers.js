@@ -122,7 +122,7 @@ const updateUserById = async (req, res) => {
 
     if(
         userName === user.userName || 
-        email=== user.email || 
+        email === user.email || 
         password === user.password || 
         groupName === user.groupName ||
         firstName === user.firstName || 
