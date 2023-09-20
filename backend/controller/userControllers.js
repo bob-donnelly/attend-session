@@ -108,7 +108,41 @@ const login = async (req, res) => {
             }
         });
     } else {
-        res.status(500).json({ message: 'Incorrect account information.'});
+        res.status(404).json({ message: 'Incorrect account information.'});
+    };
+};
+
+const updateUserById = async (req, res) => {
+
+    const id = req.params.id;
+
+    const { userName, email, password, groupName, firstName, lastName } = req.body;
+
+    const user = await Users.findById(id)
+
+    if(
+        userName === user.userName || 
+        email=== user.email || 
+        password === user.password || 
+        groupName === user.groupName ||
+        firstName === user.firstName || 
+        lastName === user.lastName
+        ) {
+        res.status(404).json({messsage: "Do not submit details you do not want to change."});
+    } else {
+
+    const updated = await Users.findByIdAndUpdate(id, {
+        userName,
+        email,
+        password,
+        groupName,
+        firstName,
+        lastName
+    }, 
+    { new: true }
+    );
+
+        res.json(updated);
     };
 };
 
@@ -117,5 +151,6 @@ module.exports = {
     getAllUsers,
     getUserById,
     registration,
-    login
-}
+    login,
+    updateUserById
+};
