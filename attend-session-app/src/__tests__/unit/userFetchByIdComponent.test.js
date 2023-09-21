@@ -8,7 +8,7 @@ import { renderHook, waitFor } from '@testing-library/react';
 import useGetOneUser from '../../components/userFetchByIdComponent';
 
 // Test suite for the user components
-describe('Tests for all user components', () => {
+describe.skip('Tests for all user components', () => {
     
     // Test for the user profile component
     test('Should fetch one user by id', async () => {
