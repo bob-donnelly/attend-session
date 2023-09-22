@@ -1,6 +1,8 @@
 // Importing users from userModel
 const Users = require('../../model/userModel');
 
+const Activities = require('../../model/activityModel');
+
 // Importing connect and disconnect functions to connect to the database 
 const { connectDB, disconnectDB } = require('../../database/connection');
 
@@ -72,5 +74,12 @@ describe('User Model tests', () => {
 
         // Logging the entire document to check the invalid field is not saved
         console.log(`Stop invalid fields: ${saveUserWithWrongField}`);
+    });
+});
+
+describe('Activity Model tests', () => { 
+
+    test('Should save an activity', async() => {
+        
     });
 });
