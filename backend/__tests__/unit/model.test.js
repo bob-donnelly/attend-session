@@ -17,6 +17,33 @@ const userData = {
     admin: false
 };
 
+const activitiesData = {
+    weeklyActivityName: "Bingo",
+    locations: [{
+        hallName: "Bingo Hall",
+        address: "123 Bingo Street",
+        city: "Bingo City",
+        region: "Bingo Region"
+    },
+    {
+        hallName: "Bingo Hall2",
+        address: "1234 Bingo Street",
+        city: "Bingo City",
+        region: "Bingo Region",
+    }],
+    days: ["Tuesday", "Sunday"],
+    times: [{
+        startTime: "18:00",
+        endTime: "21:00",
+    },
+{
+    startTime: "08:00",
+    endTime: "11:00",
+}],
+    createdBy: "5f9d7a3b7f8c3b1f5c1f8a5f",
+    attendedBy: ["5f9d7a3b7f8c3b1f5c1f8a5f", "64cc6e90db7249ae1676c600", "64d022b4990fdc8b69468017"]
+}
+
 // Before each tests await database connection for a blank test
 beforeEach(async () => {
     await connectDB();
@@ -80,6 +107,28 @@ describe('User Model tests', () => {
 describe('Activity Model tests', () => { 
 
     test('Should save an activity', async() => {
-        
+        const activity = Activities(activitiesData);
+        const savedActivity = await activity.save();
+
+        expect(savedActivity._id).toBeDefined();
+        expect(savedActivity.weeklyActivityName).toBe(activitiesData.weeklyActivityName);
+        expect(savedActivity.locations[0].hallName).toBe(activitiesData.locations[0].hallName);
+        expect(savedActivity.locations[0].address).toBe(activitiesData.locations[0].address);
+        expect(savedActivity.locations[0].city).toBe(activitiesData.locations[0].city);
+        expect(savedActivity.locations[0].region).toBe(activitiesData.locations[0].region);
+        expect(savedActivity.locations[1].hallName).toBe(activitiesData.locations[1].hallName);
+        expect(savedActivity.locations[1].address).toBe(activitiesData.locations[1].address);
+        expect(savedActivity.locations[1].city).toBe(activitiesData.locations[1].city);
+        expect(savedActivity.locations[1].region).toBe(activitiesData.locations[1].region);
+        expect(savedActivity.days[0]).toBe(activitiesData.days[0]);
+        expect(savedActivity.days[1]).toBe(activitiesData.days[1]);
+        expect(savedActivity.times[0].startTime).toBe(activitiesData.times[0].startTime);
+        expect(savedActivity.times[0].endTime).toBe(activitiesData.times[0].endTime);
+        expect(savedActivity.times[1].startTime).toBe(activitiesData.times[1].startTime);
+        expect(savedActivity.times[1].endTime).toBe(activitiesData.times[1].endTime);
+        expect(savedActivity.createdBy).toBeDefined();
+        expect(savedActivity.attendedBy[0]).toBeDefined();
+        expect(savedActivity.attendedBy[1]).toBeDefined();
+        expect(savedActivity.attendedBy[2]).toBeDefined();
     });
 });
