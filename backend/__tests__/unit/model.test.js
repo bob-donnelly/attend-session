@@ -19,6 +19,7 @@ const userData = {
 
 const activitiesData = {
     weeklyActivityName: "Bingo",
+    description: "Bingo is a fun social event for ages 4 and up. Please come join us!",
     locations: [{
         hallName: "Bingo Hall",
         address: "123 Bingo Street",
@@ -112,6 +113,7 @@ describe('Activity Model tests', () => {
 
         expect(savedActivity._id).toBeDefined();
         expect(savedActivity.weeklyActivityName).toBe(activitiesData.weeklyActivityName);
+        expect(savedActivity.description).toBe(activitiesData.description);
         expect(savedActivity.locations[0].hallName).toBe(activitiesData.locations[0].hallName);
         expect(savedActivity.locations[0].address).toBe(activitiesData.locations[0].address);
         expect(savedActivity.locations[0].city).toBe(activitiesData.locations[0].city);
