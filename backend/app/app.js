@@ -6,6 +6,7 @@ const cors = require('cors');
 
 // Importing routes from router module
 const userRoutes = require('../routes/userRoutes');
+const adminRoutes = require('../routes/adminRoutes');
 
 // Creating the app
 const app = express();
@@ -18,6 +19,9 @@ app.use(cors());
 
 // Using the app to serve the routes 
 app.use("/user", userRoutes);
+
+// Using the app to server the routes
+app.use("/admin", adminRoutes);
 
 // Exporting the app module
 module.exports = app;
