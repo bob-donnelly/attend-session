@@ -10,7 +10,7 @@ const app = require('../../app/app');
 // User data to be send in registration test
 const user = {
     userName: "Jim",
-    email: "test@test4322.com",
+    email: "test@test43229.com",
     password: "differentpassword2",
     groupName: "Activity name here2",
     firstName: "Baker2",
@@ -19,18 +19,18 @@ const user = {
 };
 
 const updateAllUserFields = {
-    userName: "Jimmiest212",
-    email: "test@test40312.com",
-    password: "differentpasswords312",
-    groupName: "Activity name here312",
-    firstName: "BakersDozens312",
-    lastName: "Smithy312"
+    userName: "Jimmiest21211",
+    email: "test@test4031112.com",
+    password: "differentpasswords31222",
+    groupName: "Activity name here31222",
+    firstName: "BakersDozens31222",
+    lastName: "Smithy31222"
 };
 
 const missingUpdateFields = {
-    groupName: "Activity name here312",
-    firstName: "BakersDozen312",
-    lastName: "Smithiest312"
+    groupName: "Activity name here3121",
+    firstName: "BakersDozen3121",
+    lastName: "Smithiest3121"
 };
 
 const invalidUpdateField = {
@@ -122,5 +122,11 @@ describe("Testing routes", () => {
         const response = await request(app).patch("/user/update/64cc6f0b54ab61ecbf03f9ec").send({...invalidUpdateField }); response
 
         expect(response.statusCode).toBe(404);
+    });
+
+    test('Should return all activities in the database', async () => {
+        const response = await request(app).get("/admin/activities");
+
+        expect(response.statusCode).toBe(200);
     });
 });
