@@ -8,6 +8,7 @@ import Signup from '../view/signup';
 import Login from '../view/login';
 import ProtectAdminRoutes from '../components/protectAdminRoutes';
 import ProtectUserRoutes from '../components/protectUserRoutes';
+import Navbar from '../view/navbar';
 
 // Application function that will house all of the page components
 function App() {
@@ -15,6 +16,7 @@ function App() {
   // Returns the router which will house all of the routes
   return(
     <Router>
+      <Navbar />
       <main> 
       {/* 
           Routes from react-router-dom which declare a route, 
