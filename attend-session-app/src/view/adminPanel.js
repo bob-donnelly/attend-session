@@ -1,5 +1,6 @@
 // Import the fetch logic custom hook from the admin components
 import useGetAllUsers from '../components/adminTableComponent';
+import AdminCalendar from '../components/calendar';
 
 // AdminPanel view component
 const AdminPanel = () => {
@@ -10,6 +11,7 @@ const AdminPanel = () => {
     // Shows the necessary values of the users in a table
     return (
         <div>
+            <AdminCalendar />
             <table>
                 {/* 
                     Table headers for the table
@@ -39,7 +41,7 @@ const AdminPanel = () => {
             </table>
         </div>
     );
-}
+};
 
 // Export default is used if there is only one function in the file
 export default AdminPanel;
