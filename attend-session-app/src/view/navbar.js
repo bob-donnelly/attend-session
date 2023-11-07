@@ -7,7 +7,7 @@ const Navbar = () => {
 
             <div className="navbar-logo">
 
-                <h2>Atennd Session</h2>
+                <h2>Attend Session</h2>
 
             </div>
 
